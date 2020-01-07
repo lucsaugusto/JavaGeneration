@@ -18,8 +18,8 @@ import java.util.Scanner;
 public class App {
 
 	static double base, altura, hipotenusa, area;
-	static double vetor[] = new double[100];
-	static Integer i;
+	static double vetor[] = new double[5];
+	static Integer i, cont;
 	static Scanner reader = new Scanner(System.in);
 
 	public static void main(String[] args) {
@@ -78,18 +78,30 @@ public class App {
 	}
 
 	static void ExibirPares() {
-
+		for(i = 0; i < vetor.length; i++) {
+			if(vetor[i] % 2 == 0)
+				System.out.println("vetor["+ (i + 1) +"]: " + vetor[i]);
+		}
 	}
 
 	static void ExibirImpares() {
-
+		for(i = 0; i < vetor.length; i++) {
+			if(vetor[i] % 2 != 0)
+				System.out.println("vetor["+ (i + 1) +"]: " + vetor[i]);
+		}
 	}
 
 	static void ContaPares() {
-
+		for(i = 0; i < vetor.length; i++)
+			if(vetor[i] % 2 != 0)
+				cont++;
+		System.out.println(cont + " valores pares.");
 	}
 
 	static void ContaImpares() {
-
+		for(i = 0; i < vetor.length; i++) 
+			if(vetor[i] % 2 != 0)
+				cont++;
+		System.out.println(cont + " valores impares.");
 	}
 }
