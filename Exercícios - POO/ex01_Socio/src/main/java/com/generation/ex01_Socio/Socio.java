@@ -10,11 +10,11 @@ public class Socio {
 	private String telefone;
 	private String endereco;
 
-	Socio() {
-		//this("", "", "", "", "", "");
+	public Socio() {
+		
 	}
 
-	Socio(String nome, String cpf, String rg, String nascimento, String telefone, String endereco) {
+	public Socio(String nome, String cpf, String rg, String nascimento, String telefone, String endereco) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.rg = rg;
