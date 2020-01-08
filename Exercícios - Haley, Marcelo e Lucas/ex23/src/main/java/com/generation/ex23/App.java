@@ -16,9 +16,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class App {
-
-	static double base, altura, hipotenusa, area;
-	static double vetor[] = new double[5];
+	static Integer vetor[] = new Integer[5];
 	static Integer i, cont;
 	static Scanner reader = new Scanner(System.in);
 
@@ -34,6 +32,7 @@ public class App {
 					+ "5 - Exibir a quantidade de números pares existem nas posições ímpares do vetor\r\n"
 					+ "6 - Exibir a quantidade de números ímpares existem nas posições pares do vetor\r\n"
 					+ "7 - Sair");
+			System.out.print("> ");
 			opc = reader.nextInt();
 			switch (opc) {
 			case 1:
@@ -66,7 +65,7 @@ public class App {
 
 	static void CarregaVetor() {
 		for(i = 0; i < vetor.length; i++) {
-			System.out.println("digite um número: ");
+			System.out.print("digite: ");
 			vetor[i] = reader.nextInt();
 		}
 		Arrays.sort(vetor);
@@ -92,16 +91,20 @@ public class App {
 	}
 
 	static void ContaPares() {
-		for(i = 0; i < vetor.length; i++)
-			if(vetor[i] % 2 != 0)
+		cont = 0;
+		for(i = 0; i < vetor.length; i++) {
+			if(vetor[i] % 2 == 0)
 				cont++;
+		}
 		System.out.println(cont + " valores pares.");
 	}
 
 	static void ContaImpares() {
-		for(i = 0; i < vetor.length; i++) 
+		cont = 0;
+		for(i = 0; i < vetor.length; i++) {
 			if(vetor[i] % 2 != 0)
 				cont++;
+		}
 		System.out.println(cont + " valores impares.");
 	}
 }
