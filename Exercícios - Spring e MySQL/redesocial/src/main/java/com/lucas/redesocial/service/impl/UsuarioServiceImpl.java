@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lucas.escola.entity.Aluno;
 import com.lucas.redesocial.entity.Usuario;
+import com.lucas.redesocial.repository.UsuarioRepository;
 import com.lucas.redesocial.service.UsuarioService;
 
 @Service
@@ -16,27 +18,23 @@ public class UsuarioServiceImpl implements UsuarioService{
 	
 	
 	@Override
-	public Usuario insertOrUpdate(Usuario usuario) {
-		// TODO Auto-generated method stub
-		return null;
+	public Usuario insertOrUpdate(Usuario entity) {
+		return repository.save(entity);
 	}
 
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
-		
+		this.repository.deleteById(id);
 	}
 
 	@Override
 	public List<Usuario> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return (List<Usuario>) this.repository.findAll();
 	}
 
 	@Override
 	public Usuario getById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.repository.findById(id).orElse(null);
 	}
 	
 
